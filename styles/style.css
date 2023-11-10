@@ -2,4 +2,100 @@
 
 .page {
   /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
+  font-family: 'IBM Plex mono', monospace;
+  font-size: 18px;
+  background: var(--bg-color);
 }
+
+.header {
+  position: relative;
+  display: grid;
+  grid-template-rows: 1fr max-content 1fr;
+  justify-items: end;
+  align-self: center;
+  block-size: 100vh;
+  min-block-size: 668px;
+  padding: var(--main-gap);
+  font-size: var(--main-tekst-size);
+}
+
+
+.header-text {
+  background: var(--accent-color);
+  color: #000028;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 23.4px;
+}
+
+.header__theme-menu-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--main-gap);
+}
+
+.header__theme-menu-button {
+  position: relative;
+  display: block;
+  border: 1px solid transparent;
+  padding: 2px 13px 4px;
+  color: var(--accent-color);
+  line-height: 1;
+  text-transform: lowercase;
+  background-color: transparent;
+  cursor: pointer;
+  appearance: none;
+}
+
+.header__theme-menu-button:focus {
+  outline: none;
+}
+
+.header__theme-menu-button:focus-visible::after {
+  content: '';
+  position: absolute;
+  inline-size: 100%;
+  block-size: 1px;
+  background-color: var(--accent-color);
+  inset-block-end: -2px;
+  inset-inline-start: 0;
+}
+
+.header__theme-menu-button:hover {
+  --nav-hover-color: rgba(255, 0, 112 / 0.4);
+
+  border: 1px solid var(--nav-hover-color);
+}
+
+.header__theme-menu-button_active {
+  bottom: 1px solid var(--accent-color);
+  pointer-events: none;
+}
+
+.header-logo {
+  justify-self: start;
+  color: var(--header-logo-color);
+  font-size: var(--header-logo-size);
+  line-height: 0.825;
+  text-shadow: 4px 4px 0 var(--accent-color);
+}
+
+.content__link {
+  text-decoration: none;
+  text-shadow: 2px 2px 0 var(--accent-color);
+}
+
+.footer {
+  position: relative;
+  display: grid;
+  place-items: center;
+}
+
+@supports (block-size: 100dvb) {
+  block-size: 100dvb;
+}
+
+
+
+
+
